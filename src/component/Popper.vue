@@ -42,6 +42,7 @@
     watch,
     watchEffect,
     onMounted,
+    defineExpose,
   } from "vue";
   import { usePopper, useContent, useClickAway } from "@/composables";
   import Arrow from "./Arrow.vue";
@@ -297,6 +298,12 @@
     if (enableClickAway.value) {
       useClickAway(popperContainerNode, closePopper);
     }
+  });
+
+  defineExpose({
+    openPopper,
+    closePopper,
+    togglePopper,
   });
 </script>
 

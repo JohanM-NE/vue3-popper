@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Popper arrow>
+    <Popper arrow ref="test">
       <button>Click this</button>
       <template #content>
         <div>This is the content</div>
@@ -18,6 +18,9 @@
     components: {
       Popper,
     },
+    mounted() {
+      console.log(this.$refs.test.openPopper());
+    }
   });
 </script>
 
